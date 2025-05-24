@@ -98,11 +98,14 @@ import custom_image from "../assets/images/custom.png"
         box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         transition: all 0.3s ease;
         border-top: 4px solid var(--primary-500);
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
     }
 
     .service-col {
-        border-top-color: var(--accent-500);
-        min-height: 100%;
+        border-top-color: var(--accent-600);
     }
 
     .service-col:hover {
@@ -168,14 +171,11 @@ import custom_image from "../assets/images/custom.png"
         transform: scale(1.05);
     }
 
-    /* .service-col:hover .service-icon {
-        transform: scale(1.05);
-    } */
-
     @media (max-width: 768px) {
         .services-container {
             grid-template-columns: 1fr;
             gap: 2rem;
+            align-items: start;
         }
 
         .title {
@@ -186,6 +186,13 @@ import custom_image from "../assets/images/custom.png"
 
         .service-col {
             text-align: center;
+        }
+        .service-col:hover {
+            transform: none;
+            box-shadow: none;
+        }
+        .service-col:hover .service-image img {
+            transform: none;
         }
 
         .service-header {
