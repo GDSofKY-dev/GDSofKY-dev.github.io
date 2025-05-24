@@ -11,18 +11,17 @@
   "dependencies": {
     "aos": "^2.3.4",
     "astro": "^5.7.13",
-    "astro-imagetools": "^0.9.0",
-    "sharp": "^0.34.2"
+    "astro-imagetools": "^0.9.0"
   },
   "pnpm": {
-    "supportedArchitectures": {
-      "os": [
-        "current"
-      ],
-      "cpu": [
-        "x64",
-        "arm64"
-      ]
-    }
-  }
+		"supportedArchitectures": {
+			"os": [
+				"current"
+			],
+			"cpu": [
+				"x64",
+				"arm64"
+			]
+		}
+	}
 }

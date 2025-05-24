@@ -57,10 +57,10 @@
                 // Start moving title when section enters viewport
                 if (sectionTop <= 32 && sectionTop > -sectionHeight + windowHeight) {
                     const scrolled = Math.abs(sectionTop - 32);
-                    const maxScroll = sectionHeight - windowHeight + 2000;
+                    const maxScroll = sectionHeight - windowHeight + 1000;
 
                     // Make it move 1.5x faster than scroll for more responsive feel
-                    const translateY = Math.min(scrolled * 1.5, maxScroll);
+                    const translateY = Math.min(scrolled + windowHeight/3, maxScroll);
 
                     title.style.transform = `translateY(${translateY}px)`;
                 } else if (sectionTop > 32) {
