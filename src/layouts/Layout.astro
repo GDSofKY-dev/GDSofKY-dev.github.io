@@ -1,8 +1,6 @@
 ---
 // Remove the AOS CSS import - we'll use CDN for both CSS and JS
-export interface Props {
-    title: string;
-}
+export interface Props { title: string;}
 const { title } = Astro.props;
 import 'aos/dist/aos.css'
 ---
