@@ -12,12 +12,14 @@ import { COMPANY_INFO } from '../constants/company';
     />
         <div class="container">
             <div class="hero-content">
-                <h1>A complete garage door <em>solution</em></h1>
+                <h1 data-aos="zoom-in-right" data-aos-delay="100" data-aos-duration="800">
+                    A complete garage door <em>solution</em>
+                </h1>
                 <br>
-                <p>
+                <p data-aos="zoom-in-right" data-aos-delay="200" data-aos-duration="500">
                     A full-service garage door company based in Richmond Kentucky, we offer everything from sales to service to warranty work.
                 </p>
-                <div class="cta-button">
+                <div class="cta-button" data-aos="fade" data-aos-delay="300" data-aos-duration="300">
                   <a href={COMPANY_INFO.phoneHref} class="btn primary" id="contact">
                     <i class="bi bi-telephone" style="font-size: 25px;"></i>
                     <span>&nbsp;&nbsp;CALL US</span>
@@ -46,7 +48,7 @@ import { COMPANY_INFO } from '../constants/company';
     }
 
     .hero {
-        min-height: 82vh;
+        min-height: 90vh;
         display: flex;
         background-color: var(--secondary-800);
         overflow: hidden;
