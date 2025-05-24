@@ -1,0 +1,146 @@
+---
+import { COMPANY_INFO } from "../constants/company";
+
+// No imports needed for this component
+---
+
+<section id="why-choose" class="why-choose-section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">
+            Why <em>choose</em><br>
+            {COMPANY_INFO.name}
+        </h2>
+
+        <div class="stats-container">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-number">10</div>
+                <div class="stat-label">
+                    Years of<br>
+                    Experience
+                </div>
+            </div>
+
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">
+                    Happy Customers<br>
+                    Served
+                </div>
+            </div>
+
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">
+                    Hour Emergency<br>
+                    Service
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .why-choose-section {
+        background: linear-gradient(135deg, var(--primary-750) 0%, var(--primary-800) 100%);
+        color: var(--text-50);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .why-choose-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="20" cy="80" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+        pointer-events: none;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .section-title {
+        font-size: 3.5rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 4rem;
+        line-height: 1.1;
+    }
+
+    .section-title em {
+        font-style: italic;
+        color: var(--accent-400);
+    }
+
+    .stats-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .stat-item {
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 6rem;
+        font-weight: 700;
+        color: var(--text-50);
+        margin-bottom: 1rem;
+        line-height: 1;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .stat-label {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--text-100);
+        line-height: 1.4;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stats-container {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .section-title {
+            font-size: 3rem;
+        }
+
+        .stat-number {
+            font-size: 5rem;
+        }
+
+        .stats-container {
+            gap: 2rem;
+        }
+    }
+</style>

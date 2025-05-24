@@ -1,0 +1,230 @@
+---
+// Clean testimonials component with split layout
+---
+
+<section id="testimonials" class="testimonials-section">
+    <div class="container">
+        <div class="testimonials-layout">
+            <div class="testimonials-title" data-aos="fade-right" data-aos-duration="800">
+                <h2>Client<br><em>Testimonials</em></h2>
+            </div>
+
+            <div class="testimonials-content">
+                <div class="testimonial-item" data-aos="fade-left" data-aos-delay="100" data-aos-anchor-placement="top-bottom">
+                    <blockquote>
+                        Excellent service! They fixed our garage door spring the same day we called. Professional, reliable, and reasonably priced. The team was punctual and cleaned up after themselves. Highly recommend Garage Door Solutions of KY!
+                    </blockquote>
+                    <cite>- Sarah Johnson, Richmond KY</cite>
+                </div>
+
+                <div class="testimonial-item" data-aos="fade-left" data-aos-delay="200" data-aos-anchor-placement="top-bottom">
+                    <blockquote>
+                        Had a new garage door installed and couldn't be happier with the results. The team was professional, the door works perfectly, and the price was very fair. Great experience from start to finish.
+                    </blockquote>
+                    <cite>- Mike Thompson, Berea KY</cite>
+                </div>
+
+                <div class="testimonial-item" data-aos="fade-left" data-aos-delay="300" data-aos-anchor-placement="top-bottom">
+                    <blockquote>
+                        Emergency repair at 9 PM on a Saturday night - they came out immediately and fixed our broken spring. Outstanding customer service and fair pricing. Will definitely use them again.
+                    </blockquote>
+                    <cite>- Jennifer Davis, Lexington KY</cite>
+                </div>
+
+                <div class="testimonial-item" data-aos="fade-left" data-aos-delay="400" data-aos-anchor-placement="top-bottom">
+                    <blockquote>
+                        Professional installation of our custom garage door. The quality of work exceeded our expectations and they completed everything on schedule. Highly recommended for anyone needing garage door services.
+                    </blockquote>
+                    <cite>- Robert Wilson, Richmond KY</cite>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const title = document.querySelector('.testimonials-title');
+        const section = document.querySelector('.testimonials-section');
+
+        if (title && section && window.innerWidth > 1024) {
+            function updateTitlePosition() {
+                const sectionRect = section.getBoundingClientRect();
+                const sectionTop = sectionRect.top;
+                const sectionHeight = sectionRect.height;
+                const windowHeight = window.innerHeight;
+
+                // Start moving title when section enters viewport
+                if (sectionTop <= 32 && sectionTop > -sectionHeight + windowHeight) {
+                    const scrolled = Math.abs(sectionTop - 32);
+                    const maxScroll = sectionHeight - windowHeight + 2000;
+
+                    // Make it move 1.5x faster than scroll for more responsive feel
+                    const translateY = Math.min(scrolled * 1.5, maxScroll);
+
+                    title.style.transform = `translateY(${translateY}px)`;
+                } else if (sectionTop > 32) {
+                    // Reset when section is above viewport
+                    title.style.transform = 'translateY(0px)';
+                }
+            }
+
+            // Use immediate scroll handler for instant response
+            window.addEventListener('scroll', updateTitlePosition, { passive: true });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth <= 1024) {
+                    title.style.transform = 'translateY(0px)';
+                }
+            });
+
+            // Initial call
+            updateTitlePosition();
+        }
+    });
+</script>
+
+<style>
+    .testimonials-section {
+        background-color: var(--background-50);
+        position: relative;
+        overflow-x: hidden;
+        min-height: 100vh;
+    }
+
+    .container {
+        overflow-x: hidden;
+        gap: 2.5rem;
+    }
+
+    .testimonials-layout {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 6rem;
+        align-items: start;
+    }
+
+    .testimonials-title {
+        position: sticky;
+        top: 2rem;
+        height: fit-content;
+    }
+
+    .testimonials-title h2 {
+        font-size: 4.5rem;
+        font-weight: 700;
+        color: var(--text-800);
+        line-height: 0.9;
+        margin: 0;
+    }
+
+    .testimonials-title em {
+        font-style: italic;
+        color: var(--primary-600);
+    }
+
+    .testimonials-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 1rem;
+        margin-left: 1rem;
+    }
+
+    .testimonial-item {
+        background: white;
+        padding: 2rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        border-left: 4px solid var(--primary-600);
+        transition: all 0.3s ease;
+    }
+
+    .testimonial-item:hover {
+        transform: translateX(8px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        border-left-color: var(--accent-500);
+    }
+
+    blockquote {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--text-700);
+        margin: 0 0 1.5rem 0;
+        font-style: normal;
+    }
+
+    cite {
+        font-size: 1rem;
+        color: var(--primary-700);
+        font-weight: 600;
+        font-style: italic;
+    }
+
+    /* Responsive design */
+    @media (max-width: 1200px) {
+        .testimonials-layout {
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+        }
+
+        .testimonials-title h2 {
+            font-size: 3.8rem;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .testimonials-layout {
+            grid-template-columns: 1fr;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .testimonials-title {
+            position: static;
+            text-align: center;
+            flex: none;
+        }
+
+        .testimonials-title h2 {
+            font-size: 3.5rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .testimonials-layout {
+            flex-direction: column;
+            gap: 3rem;
+        }
+        .testimonials-title h2 {
+            font-size: 2.8rem;
+        }
+
+        .testimonials-content {
+            gap: 2rem;
+        }
+
+        .testimonial-item {
+            padding: 1.5rem;
+        }
+
+        blockquote {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .testimonials-layout {
+            flex-direction: column;
+            gap: 3rem;
+        }
+        .testimonials-title h2 {
+            font-size: 2.4rem;
+        }
+
+        .testimonial-item:hover {
+            transform: translateX(4px);
+        }
+    }
+</style>

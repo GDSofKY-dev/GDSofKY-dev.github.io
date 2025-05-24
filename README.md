@@ -1,2 +1,3 @@
-# GDSofKY-dev.github.io
-The website for Garage Door Solutions of KY
+# Garage Door Solutions of KY website
+
+Designed and developed by [Sandesh Lamichhane](sandesh-l.com)
