@@ -35,7 +35,7 @@ jobs:
         run: pnpm install
 
       - name: Reinstall Sharp for Linux
-        run: pnpm install --platform=linux --arch=x64 sharp
+        run: pnpm install sharp
 
       - name: Build site
         run: pnpm run build
