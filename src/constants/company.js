@@ -16,7 +16,7 @@ export const COMPANY_INFO = {
         weekends: "6:00 AM - 9:00 PM"
     },
     social: {
-        facebook: "#",
+        facebook: "https://www.facebook.com/gdsofky",
         google: "#",
         yelp: "#"
     }
