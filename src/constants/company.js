@@ -5,7 +5,7 @@ export const COMPANY_INFO = {
     email: "sales@garagedoorsolutionsofky.com",
     emailHref: "mailto:sales@garagedoorsolutionsofky.com",
     address: {
-        street: "123 Main Street",
+        street: "536 Blue Spruce Dr.",
         city: "Richmond",
         state: "KY",
         zip: "40475",
