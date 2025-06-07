@@ -55,9 +55,9 @@
                 const windowHeight = window.innerHeight;
 
                 // Start moving title when section enters viewport
-                if (sectionTop <= 32 && sectionTop > -sectionHeight + windowHeight) {
+                if (sectionTop <= 32 && sectionTop > -sectionHeight) {
                     const scrolled = Math.abs(sectionTop - 32);
-                    const maxScroll = sectionHeight - windowHeight + 1000;
+                    const maxScroll = sectionHeight - sectionHeight/3;
 
                     // Make it move 1.5x faster than scroll for more responsive feel
                     const translateY = Math.min(scrolled + windowHeight/3, maxScroll);
@@ -89,7 +89,8 @@
         background-color: var(--background-50);
         position: relative;
         overflow-x: hidden;
-        min-height: 100vh;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .container {
