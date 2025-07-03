@@ -1,0 +1,137 @@
+<section id="facebook" class="facebook-section">
+    <div class="container">
+        <div class="facebook-content" data-aos="fade-up" data-aos-duration="600">
+            <div class="facebook-header">
+                <h2>Follow Us on Facebook</h2>
+                <p>Facebook followers get access to exclusive specials and seasonal promotions throughout the year.</p>
+            </div>
+
+            <div class="facebook-embed-container">
+                <div id="fb-root"></div>
+                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0"></script>
+                <div class="fb-page"
+                     data-href="https://www.facebook.com/gdsofky"
+                     data-tabs="timeline"
+                     data-width="500"
+                     data-height="500"
+                     data-small-header="true"
+                     data-adapt-container-width="true"
+                     data-hide-cover="false"
+                     data-show-facepile="false">
+                    <blockquote cite="https://www.facebook.com/gdsofky" class="fb-xfbml-parse-ignore">
+                        <a href="https://www.facebook.com/gdsofky">Garage Door Solutions of KY</a>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .facebook-section {
+        background: linear-gradient(135deg, var(--background-100) 0%, var(--background-100) 100%);
+        position: relative;
+        overflow: hidden;
+        padding: 80px 0;
+    }
+
+    .facebook-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        opacity: 0.4;
+        pointer-events: none;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .facebook-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .facebook-header {
+        text-align: left;
+    }
+
+    .facebook-header h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--text-900);
+        border-bottom: 3px solid var(--primary-700);
+        padding-bottom: 0.5rem;
+        display: inline-block;
+    }
+
+    .facebook-header p {
+        font-size: 1.2rem;
+        color: var(--text-700);
+        line-height: 1.6;
+        max-width: 600px;
+    }
+
+    .facebook-embed-container {
+        /* background: var(--background-50);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--primary-200); */
+        width: 100%;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .fb-page {
+        scale: 1.2;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .facebook-content {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .facebook-header {
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .facebook-header h2 {
+            font-size: 2rem;
+        }
+
+        .facebook-header p {
+            font-size: 1.1rem;
+        }
+
+        .facebook-embed-container {
+            padding: 1rem;
+        }
+
+        .facebook-section {
+            padding: 60px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .facebook-header h2 {
+            font-size: 1.75rem;
+        }
+
+        .facebook-content {
+            gap: 2rem;
+        }
+    }
+</style>
