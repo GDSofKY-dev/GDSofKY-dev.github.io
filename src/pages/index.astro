@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
+import LocalSEO from '../components/LocalSEO.astro';
 import Facebook from '../components/Facebook.astro';
 import WhyUs from '../components/WhyUs.astro';
 import Testimonials from '../components/Testimonials.astro';
@@ -10,16 +11,17 @@ import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import 'aos/dist/aos.css'
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title='Garage Door Solutions of KY'>
+<Layout title='Garage Door Repair & Installation Richmond KY | Garage Door Solutions'
+  		description="Professional garage door repair, installation & 24/7 emergency service in Richmond, Lexington, and surrounding Kentucky areas. 10+ years experience, 100+ satisfied customers. Call now!"
+  		keywords="garage door repair Richmond KY, garage door installation Kentucky, emergency garage door service Lexington, garage door company Berea, garage door spring repair">
 	<!-- <Welcome /> -->
 	<Header />
 	<main>
 		<Hero />
 		<Services/>
+		<LocalSEO />
 		<Facebook />
 		<WhyUs />
 		<Testimonials />

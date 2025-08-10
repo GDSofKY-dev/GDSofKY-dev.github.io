@@ -1,21 +1,149 @@
 ---
-// Remove the AOS CSS import - we'll use CDN for both CSS and JS
-export interface Props { title: string;}
-const { title } = Astro.props;
-import 'aos/dist/aos.css'
+export interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+}
+import { COMPANY_INFO } from '../constants/company';
+const { title, description = "Professional garage door repair, installation & 24/7 emergency service in Richmond, Lexington, Berea, and other surrounding areas of Kentucky. 10+ years experience, 100+ satisfied customers.", keywords = "garage door repair Kentucky, garage door installation Richmond KY, emergency garage door service Lexington, garage door company Berea" } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
+
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href={canonicalURL} />
 
-    <!-- Load AOS CSS from CDN -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- OpenGraph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL('/garage_doors.png', Astro.site)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL('/garage_doors.png', Astro.site)} />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+
+<!-- Local Business Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+  "name": "Garage Door Solutions of KY",
+  "image": "https://garagedoorsolutionsofky.com//_astro/GDS_logo.DcxIEWL__1A77nu.svg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": COMPANY_INFO.full,
+    "addressLocality": "Richmond",
+    "addressRegion": "KY",
+    "postalCode": "40475",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 37.7298,
+    "longitude": -84.2947
+  },
+  "url": "https://garagedoorsolutionsofky.com",
+  "telephone": COMPANY_INFO.phone,
+  "email": COMPANY_INFO.email,
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "06:00",
+      "closes": "21:00"
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Richmond",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Kentucky"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Lexington",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Kentucky"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Berea",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Kentucky"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Danville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Kentucky"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Nicholasville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Kentucky"
+      }
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Garage Door Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Garage Door Repair",
+          "description": "Professional garage door repair services in Kentucky"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Garage Door Installation",
+          "description": "Custom garage door installation services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Spring Repair",
+          "description": "Garage door spring repair and replacement"
+        }
+      }
+    ]
+  }
+}
+</script>
 </head>
 <body>
     <slot />

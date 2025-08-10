@@ -1,0 +1,171 @@
+---
+// Local SEO Component
+---
+
+
+<section id="service-areas" class="service-areas-section">
+    <div class="container">
+        <div class="title" data-aos="fade-up" data-aos-duration="800">
+            Serving Central Kentucky
+        </div>
+        <div class="cities-grid">
+            <div class="city-item" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top-bottom">
+                <div class="city-header">
+                    <div class="city-icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <h3>Richmond, KY</h3>
+                </div>
+                <p>Our home base in Madison County. Complete garage door services including emergency repairs, installations, and maintenance for residential and commercial properties.</p>
+            </div>
+            <div class="city-item" data-aos="fade-up" data-aos-delay="150" data-aos-anchor-placement="top-bottom">
+                <div class="city-header">
+                    <div class="city-icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <h3>Lexington, KY</h3>
+                </div>
+                <p>Expert garage door repair and installation in Fayette County. Serving the Bluegrass region with reliable, professional service you can trust.</p>
+            </div>
+            <div class="city-item" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom">
+                <div class="city-header">
+                    <div class="city-icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <h3>Surrounding Areas</h3>
+                </div>
+                <p>We also serve Berea, Nicholasville, Lancaster, Danville, and other communities throughout Madison, Jessamine, Garrard, and Boyle counties.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .service-areas-section {
+        background-color: var(--background-50);
+        padding: 4rem 1rem;
+    }
+
+    .title {
+        font-size: 3.5rem;
+        font-weight: 600;
+        color: var(--text-800);
+        margin-bottom: 3rem;
+        text-align: left;
+        line-height: 1.1;
+    }
+
+    .cities-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        align-items: stretch;
+    }
+
+    .city-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        background-color: white;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+        border-top: 4px solid var(--accent-600);
+        padding: 2rem;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+    .city-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .city-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .city-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        color: white;
+        background: linear-gradient(135deg, var(--primary-600), var(--primary-750));
+    }
+
+    .city-item h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-800);
+        margin: 0;
+        line-height: 1.3;
+        flex: 1;
+    }
+
+    .city-item p {
+        font-size: 1.1rem;
+        color: var(--text-600);
+        margin: 0;
+        line-height: 1.5;
+        flex: 1;
+    }
+
+    @media (max-width: 768px) {
+        .cities-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .city-item {
+            text-align: center;
+        }
+
+        .city-item:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .city-header {
+            flex-direction: column;
+            text-align: center;
+            gap: 0.75rem;
+        }
+
+        .city-item h3 {
+            text-align: center;
+        }
+
+        .city-item p {
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .cities-grid {
+            gap: 2rem;
+        }
+
+        .title {
+            font-size: 3rem;
+        }
+    }
+</style>

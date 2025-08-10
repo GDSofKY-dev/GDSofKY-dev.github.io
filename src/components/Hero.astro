@@ -7,20 +7,27 @@ import { COMPANY_INFO } from '../constants/company';
 <section id="home" class="hero" style="--header-height: 0px">
     <Image
         src={hero_image}
-        alt="Garage Door Solutions of KY logo"
+        alt="Professional garage door repair and installation services in Richmond Kentucky - Garage Door Solutions of KY"
         class="background-img"
+        width={1200}
+        height={800}
+        format="webp"
+        quality={80}
     />
         <div class="container">
             <div class="hero-content">
                 <h1 data-aos="zoom-in-right" data-aos-delay="100" data-aos-duration="800" data-aos-offset="-1000">
-                    A complete garage door <em>solution</em>
+                    Professional
+                    <em>garage door</em>
+                    <em style="color: var(--accent-400);">repair & installation</em>
+                    in Richmond, Kentucky
                 </h1>
                 <br>
                 <p data-aos="zoom-in-right" data-aos-delay="200" data-aos-duration="500" data-aos-offset="-1000">
-                    A full-service garage door company based in Richmond Kentucky, we offer everything from sales to service to warranty work.
+                    Serving Richmond, Lexington, and surrounding Central Kentucky communities with expert garage door solutions. From emergency repairs to custom installations, we're your trusted local garage door specialists with 10+ years of experience.
                 </p>
                 <div class="cta-button" data-aos="fade" data-aos-delay="300" data-aos-duration="300" data-aos-offset="-1000">
-                  <a href={COMPANY_INFO.phoneHref} class="btn primary" id="contact">
+                  <a href={COMPANY_INFO.phoneHref} class="btn primary" id="call">
                     <i class="bi bi-telephone" style="font-size: 25px;"></i>
                     <span>&nbsp;&nbsp;CALL US</span>
                 </a>
@@ -126,12 +133,12 @@ import { COMPANY_INFO } from '../constants/company';
         /* color:var(--text-950); */
     }
 
-    #contact {
+    #call {
         display: inline-flex;
         width: 150px;
         justify-content: center;
     }
-    #contact span {
+    #call span {
         font-size: large;
         line-height: 2.5;
     }
