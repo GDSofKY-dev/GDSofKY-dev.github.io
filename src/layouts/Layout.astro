@@ -8,49 +8,18 @@ import { COMPANY_INFO } from '../constants/company';
 const { title, description = "Professional garage door repair, installation & 24/7 emergency service in Richmond, Lexington, Berea, and other surrounding areas of Kentucky. 10+ years experience, 100+ satisfied customers.", keywords = "garage door repair Kentucky, garage door installation Richmond KY, emergency garage door service Lexington, garage door company Berea" } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
----
 
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content={description} />
-<meta name="keywords" content={keywords} />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href={canonicalURL} />
-
-<!-- OpenGraph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={canonicalURL} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={new URL('/garage_doors.png', Astro.site)} />
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL('/garage_doors.png', Astro.site)} />
-
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<meta name="generator" content={Astro.generator} />
-<title>{title}</title>
-
-<!-- Local Business Schema -->
-<script type="application/ld+json">
-{
+const businessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
   "name": "Garage Door Solutions of KY",
   "image": "https://garagedoorsolutionsofky.com//_astro/GDS_logo.DcxIEWL__1A77nu.svg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": COMPANY_INFO.full,
-    "addressLocality": "Richmond",
-    "addressRegion": "KY",
-    "postalCode": "40475",
+    "streetAddress": COMPANY_INFO.address.street,
+    "addressLocality": COMPANY_INFO.address.city,
+    "addressRegion": COMPANY_INFO.address.state,
+    "postalCode": COMPANY_INFO.address.zip,
     "addressCountry": "US"
   },
   "geo": {
@@ -58,7 +27,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     "latitude": 37.7298,
     "longitude": -84.2947
   },
-  "url": "https://garagedoorsolutionsofky.com",
+  "url": Astro.site?.toString(),
   "telephone": COMPANY_INFO.phone,
   "email": COMPANY_INFO.email,
   "priceRange": "$$",
@@ -143,7 +112,38 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     ]
   }
 }
-</script>
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- OpenGraph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL('/garage_doors.png', Astro.site)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL('/garage_doors.png', Astro.site)} />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+
+<!-- Local Business Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(businessSchema)}></script>
 </head>
 <body>
     <slot />
