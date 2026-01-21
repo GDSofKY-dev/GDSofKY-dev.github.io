@@ -75,12 +75,6 @@ import { COMPANY_INFO } from '../constants/company';
                 <h3>Contact Us</h3>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <i class="bi bi-geo-alt"></i>
-                        <div>
-                            <span>{COMPANY_INFO.address.city}, {COMPANY_INFO.address.state} {COMPANY_INFO.address.zip}</span>
-                        </div>
-                    </div>
-                    <div class="contact-item">
                         <i class="bi bi-telephone"></i>
                         <div>
                             <a href={COMPANY_INFO.phoneHref}>{COMPANY_INFO.phone}</a>
@@ -90,6 +84,12 @@ import { COMPANY_INFO } from '../constants/company';
                         <i class="bi bi-envelope"></i>
                         <div>
                             <a href={COMPANY_INFO.emailHref}>{COMPANY_INFO.email}</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-geo-alt"></i>
+                        <div>
+                            <span>{COMPANY_INFO.address.city}, {COMPANY_INFO.address.state} {COMPANY_INFO.address.zip}</span>
                         </div>
                     </div>
                 </div>
@@ -107,9 +107,9 @@ import { COMPANY_INFO } from '../constants/company';
                             <i class="bi bi-google"></i>
                             <span>Review us on Google</span>
                         </a>
-                        <a target="_blank" href={COMPANY_INFO.social.yelp} class="social-link">
-                            <i class="bi bi-yelp"></i>
-                            <span>Find us on Yelp</span>
+                        <a target="_blank" href={COMPANY_INFO.social.nextdoor} class="social-link">
+                            <i class="bi bi-house-fill"></i>
+                            <span>Find us on Nextdoor</span>
                         </a>
                     </div>
                     <div class="cta-button-container">
