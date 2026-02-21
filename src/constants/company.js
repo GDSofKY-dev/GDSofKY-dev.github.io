@@ -18,7 +18,7 @@ export const COMPANY_INFO = {
     },
     social: {
         facebook: "https://www.facebook.com/gdsofky",
-        google: "#",
+        google: "https://share.google/SYeeedINkEHwlhuCr",
         nextdoor: "https://nextdoor.com/page/garage-door-solutions-of-ky-richmond-ky"
     }
 }
